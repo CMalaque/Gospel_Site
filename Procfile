@@ -1,1 +1,1 @@
-web: gunicorn gospel_site.wsgi
+web: gunicorn gospel_site.wsgi:application
