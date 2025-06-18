@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: gospel-site
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn gospel_site.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: gospel_site.settings
+      - key: SECRET_KEY
+        value: 'django-insecure-7408)li=p5u0^#8*zz3$8m)^o^osjr(8*i)iu1tm000#x_-dx+'
+      - key: DEBUG
+        value: False
