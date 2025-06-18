@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunday Gospel</title>
+    <link rel="icon" type="image/png" href="{% static 'reflections/favicon.png' %}">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
@@ -47,63 +49,46 @@
         </div>
     </nav>
 
-{% load static %}
-
-<main class="max-w-5xl mx-auto mt-24 space-y-10 flex flex-col md:flex-row px-4">
-    <!-- Image for mobile -->
-    <div class="md:hidden text-center">
-        <img src="{% static 'reflections/Jesus Christ.jpg' %}" alt="Mosaic of Lord Jesus Christ" class="mx-auto w-48 rounded-lg border border-yellow-200 shadow">
-        <div class="text-xs italic text-gray-700 mt-1">Mosaic Icon, Jesus Christ<br>By Mozaico</div>
-    </div>
-
-    <!-- Image for desktop -->
-    <div class="hidden md:flex flex-col items-start md:mr-12 md:-ml-24 mt-4">
-        <img src="{% static 'reflections/Jesus Christ.jpg' %}" 
-             alt="Mosaic of Lord Jesus Christ"
-             class="rounded-lg shadow-lg w-64 h-[36rem] object-contain border-2 border-yellow-200 bg-white" 
-             style="background-color: #fff;" />
-        <div class="mt-3 text-xs text-gray-700 italic text-center w-64">
-            Mosaic Icon, Jesus Christ<br>
-            By Mozaico
-        </div>
-    </div>
-
-    <!-- Main content -->
-    <div class="flex-1 space-y-10">
-        <div class="scroll-card">
-            <h2 class="text-2xl font-bold mb-2">{{ reflection.title }}</h2>
-            <h3 class="text-lg italic mb-4">{{ reflection.subtitle }}</h3>
-            <p class="text-justify" style="text-indent: 5ch;">{{ reflection.gospel_text }}</p>
+    <main class="max-w-5xl mx-auto mt-24 space-y-10 flex flex-col md:flex-row px-4">
+        <!-- Image for mobile -->
+        <div class="md:hidden text-center">
+            <img src="{% static 'reflections/Jesus Christ.jpg' %}" alt="Mosaic of Lord Jesus Christ" class="mx-auto w-48 rounded-lg border border-yellow-200 shadow">
+            <div class="text-xs italic text-gray-700 mt-1">Mosaic Icon, Jesus Christ<br>By Mozaico</div>
         </div>
 
-        <div class="scroll-card">
-            <h2 class="text-2xl font-bold mb-4">Reflection</h2>
-            <p class="text-justify" style="text-indent: 5ch;">{{ reflection.reflection_text }}</p>
+        <!-- Image for desktop -->
+        <div class="hidden md:flex flex-col items-start md:mr-12 md:-ml-24 mt-4">
+            <img src="{% static 'reflections/Jesus Christ.jpg' %}" 
+                 alt="Mosaic of Lord Jesus Christ"
+                 class="rounded-lg shadow-lg w-64 h-[36rem] object-contain border-2 border-yellow-200 bg-white" 
+                 style="background-color: #fff;" />
+            <div class="mt-3 text-xs text-gray-700 italic text-center w-64">
+                Mosaic Icon, Jesus Christ<br>
+                By Mozaico
+            </div>
         </div>
-    </div>
-</main>
 
-<!-- Facebook Floating Button -->
-<div class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
-    <a href="https://www.facebook.com/profile.php?id=61563540627929" target="_blank"
-       aria-label="Share on Facebook"
-       class="bg-blue-600 p-2 rounded-full shadow-md hover:bg-blue-700 transition block">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 
-            23.406.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 
-            1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 
-            0-1.797.715-1.797 1.763v2.313h3.587l-.467 
-            3.622h-3.12V24h6.116c.73 0 
-            1.324-.594 1.324-1.326V1.326C24 .592 23.405 0 22.675 0z"/>
-        </svg>
-    </a>
-</div>
+        <!-- Main content -->
+        <div class="flex-1 space-y-10">
+            <div class="scroll-card">
+                <h2 class="text-2xl font-bold mb-2">{{ reflection.title }}</h2>
+                <h3 class="text-lg italic mb-4">{{ reflection.subtitle }}</h3>
+                <p class="text-justify" style="text-indent: 5ch;">{{ reflection.gospel_text }}</p>
+            </div>
 
-<!-- Footer -->
-<footer class="bg-yellow-100 shadow-inner py-4 mt-12">
-    <nav class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-700">
-        <a href="https://www.facebook.com/profile.php?id=61563540627929" target="_blank" class="text-blue-600 hover:underline font-bold flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <div class="scroll-card">
+                <h2 class="text-2xl font-bold mb-4">Reflection</h2>
+                <p class="text-justify" style="text-indent: 5ch;">{{ reflection.reflection_text }}</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Facebook Floating Button -->
+    <div class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
+        <a href="https://www.facebook.com/profile.php?id=61563540627929" target="_blank"
+           aria-label="Share on Facebook"
+           class="bg-blue-600 p-2 rounded-full shadow-md hover:bg-blue-700 transition block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 
                 23.406.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 
                 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 
@@ -111,12 +96,27 @@
                 3.622h-3.12V24h6.116c.73 0 
                 1.324-.594 1.324-1.326V1.326C24 .592 23.405 0 22.675 0z"/>
             </svg>
-            Facebook Page
         </a>
-    </nav>
-    <div class="text-center text-xs text-gray-500 mt-2">
-        <strong>© Ebanghelyo ni Kristo</strong>
     </div>
-</footer>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-100 shadow-inner py-4 mt-12">
+        <nav class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-700">
+            <a href="https://www.facebook.com/profile.php?id=61563540627929" target="_blank" class="text-blue-600 hover:underline font-bold flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 
+                    23.406.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 
+                    1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 
+                    0-1.797.715-1.797 1.763v2.313h3.587l-.467 
+                    3.622h-3.12V24h6.116c.73 0 
+                    1.324-.594 1.324-1.326V1.326C24 .592 23.405 0 22.675 0z"/>
+                </svg>
+                Facebook Page
+            </a>
+        </nav>
+        <div class="text-center text-xs text-gray-500 mt-2">
+            <strong>© Ebanghelyo ni Kristo</strong>
+        </div>
+    </footer>
 </body>
 </html>
