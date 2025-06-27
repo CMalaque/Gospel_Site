@@ -3,9 +3,14 @@ from django.db import models
 class SundayInfo(models.Model):
     sunday_title = models.CharField(max_length=100)
     date = models.DateField()
+    
+    # Add image and caption
+    image = models.ImageField(upload_to='gospel_images/', blank=True, null=True)
+    image_caption = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return f"{self.sunday_title} | {self.date}"
+
 
 class GospelReflection(models.Model):
     title = models.CharField(max_length=100)
